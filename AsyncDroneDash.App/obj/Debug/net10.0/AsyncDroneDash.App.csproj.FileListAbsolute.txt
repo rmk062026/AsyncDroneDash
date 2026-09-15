@@ -12,3 +12,4 @@ C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.A
 C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.pdb
 C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.genruntimeconfig.cache
 C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\ref\AsyncDroneDash.App.dll
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.sourcelink.json
