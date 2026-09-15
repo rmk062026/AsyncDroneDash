@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AsyncDroneDash.App")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ccf72b87f800b70b76d0bcdf82d0a1125c704e2f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0221aecfb2740e45fad998e5de5ea454185d7311")]
 [assembly: System.Reflection.AssemblyProductAttribute("AsyncDroneDash.App")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AsyncDroneDash.App")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
