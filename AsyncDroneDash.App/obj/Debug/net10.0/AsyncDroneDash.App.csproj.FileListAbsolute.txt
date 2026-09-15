@@ -1,0 +1,14 @@
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\bin\Debug\net10.0\AsyncDroneDash.App.exe
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\bin\Debug\net10.0\AsyncDroneDash.App.deps.json
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\bin\Debug\net10.0\AsyncDroneDash.App.runtimeconfig.json
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\bin\Debug\net10.0\AsyncDroneDash.App.dll
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\bin\Debug\net10.0\AsyncDroneDash.App.pdb
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.AssemblyInfoInputs.cache
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.AssemblyInfo.cs
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.csproj.CoreCompileInputs.cache
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.dll
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\refint\AsyncDroneDash.App.dll
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.pdb
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\AsyncDroneDash.App.genruntimeconfig.cache
+C:\Users\buskr\Documents\kodehode\C#\Innlevering\AsyncDroneDash\AsyncDroneDash.App\obj\Debug\net10.0\ref\AsyncDroneDash.App.dll
