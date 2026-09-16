@@ -44,10 +44,10 @@ public class ThreadRaceService
         bravoThread.Start();
         charlieThread.Start();
         deltaThread.Start();
-        // alphaThread.Join();
-        // bravoThread.Join();
-        // charlieThread.Join();
-        // deltaThread.Join();
+        alphaThread.Join();
+        bravoThread.Join();
+        charlieThread.Join();
+        deltaThread.Join();
         // FlyDrone(alpha);
         // FlyDrone(bravo);
         // FlyDrone(charlie);
