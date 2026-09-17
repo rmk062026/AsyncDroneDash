@@ -40,18 +40,16 @@ public class ThreadRaceService
         Thread bravoThread = new Thread(() => FlyDrone(bravo));
         Thread charlieThread = new Thread(() => FlyDrone(charlie));
         Thread deltaThread = new Thread(() => FlyDrone(delta));
+
         alphaThread.Start();
         bravoThread.Start();
         charlieThread.Start();
         deltaThread.Start();
+
         alphaThread.Join();
         bravoThread.Join();
         charlieThread.Join();
         deltaThread.Join();
-        // FlyDrone(alpha);
-        // FlyDrone(bravo);
-        // FlyDrone(charlie);
-        // FlyDrone(delta);
 
         Console.WriteLine("Alle droner er ferdige!");
     }
