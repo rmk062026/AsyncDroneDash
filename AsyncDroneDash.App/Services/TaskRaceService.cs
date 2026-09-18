@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using AsyncDroneDash.App.Models;
 
 namespace AsyncDroneDash.App.Services;
@@ -41,27 +42,57 @@ public class TaskRaceService
 
         Task alphaTask = Task.Run(() =>
         {
-            FlyDrone(alpha);
-            alphaCompletion.SetResult();
+            try
+            {
+                FlyDrone(alpha);
+                alphaCompletion.SetResult();
+            }
+            catch (Exception ex)
+            {
+                alphaCompletion.SetException(ex);
+            }
         });
 
         Task bravoTask = Task.Run(() =>
         {
-            FlyDrone(bravo);
-            bravoCompletion.SetResult();
+            try
+            {
+                FlyDrone(bravo);
+                bravoCompletion.SetResult();
+            }
+            catch (Exception ex)
+            {
+                bravoCompletion.SetException(ex);
+            }
         });
 
         Task charlieTask = Task.Run(() =>
         {
-            FlyDrone(charlie);
-            charlieCompletion.SetResult();
+            try
+            {
+                FlyDrone(charlie);
+                charlieCompletion.SetResult();
+            }
+            catch (Exception ex)
+            {
+                charlieCompletion.SetException(ex);
+            }
         });
 
         Task deltaTask = Task.Run(() =>
         {
-            FlyDrone(delta);
-            deltaCompletion.SetResult();
+            try
+            {
+                FlyDrone(delta);
+                deltaCompletion.SetResult();
+            }
+            catch (Exception ex)
+            {
+                deltaCompletion.SetException(ex);
+            }
         });
+
+
         Console.WriteLine($"alphaTask status: {alphaTask.Status}");
         Console.WriteLine($"alphaCompletion.Task status: {alphaCompletion.Task.Status}");
 
@@ -74,14 +105,22 @@ public class TaskRaceService
         Console.WriteLine($"deltaTask status: {deltaTask.Status}");
         Console.WriteLine($"deltaCompletion.Task status: {deltaCompletion.Task.Status}");
 
-        await Task.WhenAll(
-            alphaCompletion.Task,
-            bravoCompletion.Task,
-            charlieCompletion.Task,
-            deltaCompletion.Task
-        );
-        Console.WriteLine("Alle droner er ferdige!");
+        try
+        {
+            await Task.WhenAll(
+                alphaCompletion.Task,
+                bravoCompletion.Task,
+                charlieCompletion.Task,
+                deltaCompletion.Task
+            );
+            Console.WriteLine("Alle droner er ferdige!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"En drone feilet: {ex.Message}");
+        }
     }
+
 
     public void FlyDrone(DroneModel drone)
     {
@@ -90,6 +129,10 @@ public class TaskRaceService
         for (int i = 0; i <= drone.MaxCheckpoints; i++)
         {
             Thread.Sleep(drone.DelayMs);
+            if (drone.Name == "Alpha" && i == 3)
+            {
+                throw new Exception("Alpha fikk en feil ved checkpoint 3!");
+            }
             Console.WriteLine($"{drone.Name} har nå kommet til checkpoint {i} og den brukte {drone.DelayMs} ms.");
         }
         Console.WriteLine($"{drone.Name} er ferdig!");
