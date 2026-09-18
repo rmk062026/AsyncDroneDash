@@ -4,7 +4,7 @@ namespace AsyncDroneDash.App.Services;
 
 public class TaskRaceService
 {
-    public void run()
+    public async Task Run()
     {
         DroneModel alpha = new DroneModel
         {
@@ -12,7 +12,15 @@ public class TaskRaceService
             MaxCheckpoints = 5,
             DelayMs = 500
         };
-        Task alphaTask = Task.Run(() => FlyDrone(alpha));
+        TaskCompletionSource alphaCompletion = new TaskCompletionSource();
+        Task alphaTask = Task.Run(() =>
+        {
+            FlyDrone(alpha);
+            alphaCompletion.SetResult();
+        });
+        Console.WriteLine($"alphaTask status: {alphaTask.Status}");
+        Console.WriteLine($"tcs.Task status: {alphaCompletion.Task.Status}");
+        await alphaCompletion.Task;
     }
 
     public void FlyDrone(DroneModel drone)
