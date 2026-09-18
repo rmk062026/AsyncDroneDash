@@ -66,7 +66,7 @@ public class TaskRaceService
         Console.WriteLine($"alphaCompletion.Task status: {alphaCompletion.Task.Status}");
 
         Console.WriteLine($"bravoTask status: {bravoTask.Status}");
-        Console.WriteLine($"bravoCompletion.Task status:: {bravoCompletion.Task.Status}");
+        Console.WriteLine($"bravoCompletion.Task status: {bravoCompletion.Task.Status}");
 
         Console.WriteLine($"charlieTask status: {charlieTask.Status}");
         Console.WriteLine($"charlieCompletion.Task status: {charlieCompletion.Task.Status}");
