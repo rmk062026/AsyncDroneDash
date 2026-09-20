@@ -58,3 +58,98 @@ Inneholder logikken for Del C
 ### Program.cs
 Starter programmet og menyen
 
+## Pseudokode
+
+### Hovedprogram
+
+START PROGRAM
+
+Opprett tjeneste for Thread-løpet
+Opprett tjeneste for Task-løpet
+Opprett tjeneste for Async-løpet
+
+Så lenge programmet kjører:
+    Vis meny
+    Les brukerens valg
+
+    Hvis valg er 1:
+        Kjør Thread-løpet
+
+    Hvis valg er 2:
+        Kjør Task-løpet
+
+    Hvis valg er 3:
+        Kjør Async-løpet
+
+    Hvis valg er 0:
+        Avslutt programmet
+
+    Ellers:
+        Vis feilmelding
+
+SLUTT PROGRAM
+
+
+### Del A - Thread + Join
+
+Opprett dronene
+
+Opprett en Thread for hver drone
+
+Start alle Thread-ene
+
+For hver drone:
+    Fly gjennom alle checkpoints
+    Vent mellom hvert checkpoint
+    Skriv fremdrift til Console
+
+Vent på hver Thread med Join
+
+Når alle er ferdige:
+    Skriv at alle dronene er ferdige
+
+
+### Del B - Task + TaskCompletionSource
+
+Opprett dronene
+
+For hver drone:
+    Opprett en TaskCompletionSource
+    Start dronearbeidet med Task.Run
+
+    Hvis dronearbeidet fullføres:
+        Marker Task som fullført
+
+    Hvis dronearbeidet feiler:
+        Marker Task som feilet
+
+Vent på alle Task-ene med Task.WhenAll
+
+Hvis en Task feiler:
+    Fang og skriv ut feilen
+
+Ellers:
+    Skriv at alle dronene er ferdige
+
+
+### Del C - async/await
+
+Opprett dronene
+
+Start FlyDroneAsync for hver drone
+
+For hver drone:
+    Gå gjennom alle checkpoints
+    Vent asynkront med Task.Delay
+    Skriv fremdrift til Console
+
+    Hvis simulert feil oppstår:
+        Kast en exception
+
+Vent asynkront på alle dronene med Task.WhenAll
+
+Hvis en Task feiler:
+    Fang og skriv ut feilen
+
+Ellers:
+    Skriv at alle dronene er ferdige
