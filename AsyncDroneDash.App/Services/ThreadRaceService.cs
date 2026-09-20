@@ -18,21 +18,21 @@ public class ThreadRaceService
         {
             Name = "Bravo",
             MaxCheckpoints = 5,
-            DelayMs = 800
+            DelayMs = 200
         };
 
         DroneModel charlie = new DroneModel()
         {
             Name = "Charlie",
             MaxCheckpoints = 5,
-            DelayMs = 1200
+            DelayMs = 700
         };
 
         DroneModel delta = new DroneModel()
         {
             Name = "Delta",
             MaxCheckpoints = 5,
-            DelayMs = 700
+            DelayMs = 400
         };
 
 
@@ -51,7 +51,7 @@ public class ThreadRaceService
         charlieThread.Join();
         deltaThread.Join();
 
-        Console.WriteLine("Alle droner er ferdige!");
+        Console.WriteLine("Alle droner er ferdige! (ThreadRace)");
     }
     public void FlyDrone(DroneModel drone)
     {

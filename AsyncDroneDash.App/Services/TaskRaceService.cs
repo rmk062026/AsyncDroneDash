@@ -53,7 +53,7 @@ public class TaskRaceService
                 charlieTask,
                 deltaTask
             );
-            Console.WriteLine("Alle droner er ferdige!");
+            Console.WriteLine("Alle droner er ferdige! (TaskRace)");
         }
         catch (Exception ex)
         {
@@ -89,7 +89,7 @@ public class TaskRaceService
             Thread.Sleep(drone.DelayMs);
             if (drone.Name == "Alpha" && i == 3)
             {
-                throw new Exception("Alpha fikk en feil ved checkpoint 3!");
+                throw new Exception("Simulert feil: Alpha fikk en feil ved checkpoint 3!");
             }
             Console.WriteLine($"{drone.Name} har nå kommet til checkpoint {i} og den brukte {drone.DelayMs} ms.");
         }

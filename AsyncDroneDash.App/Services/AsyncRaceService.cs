@@ -13,7 +13,7 @@ public class AsyncRaceService
             await Task.Delay(drone.DelayMs);
             if (drone.Name == "Alpha" && i == 3)
             {
-                throw new Exception("Alpha fikk en feil ved checkpoint 3!");
+                throw new Exception("Simulert feil: Alpha fikk en feil ved checkpoint 3!");
             }
 
             Console.WriteLine($"{drone.Name} har kommet til checkpoint {i} og den brukte {drone.DelayMs} ms.");
@@ -64,7 +64,7 @@ public class AsyncRaceService
                 charlieTask,
                 deltaTask
         );
-            Console.WriteLine("Alle droner er fardige!");
+            Console.WriteLine("Alle droner er fardige! (AsyncRace)");
         }
         catch (Exception ex)
         {
