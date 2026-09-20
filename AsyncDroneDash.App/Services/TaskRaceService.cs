@@ -1,4 +1,3 @@
-using System.Linq.Expressions;
 using AsyncDroneDash.App.Models;
 
 namespace AsyncDroneDash.App.Services;
@@ -35,83 +34,24 @@ public class TaskRaceService
             DelayMs = 400
         };
 
-        TaskCompletionSource alphaCompletion = new TaskCompletionSource();
-        TaskCompletionSource bravoCompletion = new TaskCompletionSource();
-        TaskCompletionSource charlieCompletion = new TaskCompletionSource();
-        TaskCompletionSource deltaCompletion = new TaskCompletionSource();
-
-        Task alphaTask = Task.Run(() =>
-        {
-            try
-            {
-                FlyDrone(alpha);
-                alphaCompletion.SetResult();
-            }
-            catch (Exception ex)
-            {
-                alphaCompletion.SetException(ex);
-            }
-        });
-
-        Task bravoTask = Task.Run(() =>
-        {
-            try
-            {
-                FlyDrone(bravo);
-                bravoCompletion.SetResult();
-            }
-            catch (Exception ex)
-            {
-                bravoCompletion.SetException(ex);
-            }
-        });
-
-        Task charlieTask = Task.Run(() =>
-        {
-            try
-            {
-                FlyDrone(charlie);
-                charlieCompletion.SetResult();
-            }
-            catch (Exception ex)
-            {
-                charlieCompletion.SetException(ex);
-            }
-        });
-
-        Task deltaTask = Task.Run(() =>
-        {
-            try
-            {
-                FlyDrone(delta);
-                deltaCompletion.SetResult();
-            }
-            catch (Exception ex)
-            {
-                deltaCompletion.SetException(ex);
-            }
-        });
+        Task alphaTask = RunDroneTask(alpha);
+        Task bravoTask = RunDroneTask(bravo);
+        Task charlieTask = RunDroneTask(charlie);
+        Task deltaTask = RunDroneTask(delta);
 
 
         Console.WriteLine($"alphaTask status: {alphaTask.Status}");
-        Console.WriteLine($"alphaCompletion.Task status: {alphaCompletion.Task.Status}");
-
         Console.WriteLine($"bravoTask status: {bravoTask.Status}");
-        Console.WriteLine($"bravoCompletion.Task status: {bravoCompletion.Task.Status}");
-
         Console.WriteLine($"charlieTask status: {charlieTask.Status}");
-        Console.WriteLine($"charlieCompletion.Task status: {charlieCompletion.Task.Status}");
-
         Console.WriteLine($"deltaTask status: {deltaTask.Status}");
-        Console.WriteLine($"deltaCompletion.Task status: {deltaCompletion.Task.Status}");
 
         try
         {
             await Task.WhenAll(
-                alphaCompletion.Task,
-                bravoCompletion.Task,
-                charlieCompletion.Task,
-                deltaCompletion.Task
+                alphaTask,
+                bravoTask,
+                charlieTask,
+                deltaTask
             );
             Console.WriteLine("Alle droner er ferdige!");
         }
@@ -121,6 +61,24 @@ public class TaskRaceService
         }
     }
 
+    public Task RunDroneTask(DroneModel drone)
+    {
+        TaskCompletionSource completion = new TaskCompletionSource();
+
+        Task.Run(() =>
+        {
+            try
+            {
+                FlyDrone(drone);
+                completion.SetResult();
+            }
+            catch (Exception ex)
+            {
+                completion.SetException(ex);
+            }
+        });
+        return completion.Task;
+    }
 
     public void FlyDrone(DroneModel drone)
     {
